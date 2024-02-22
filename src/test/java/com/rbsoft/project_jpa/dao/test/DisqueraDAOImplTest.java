@@ -3,6 +3,7 @@
  */
 package com.rbsoft.project_jpa.dao.test;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDateTime;
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import com.rbsoft.project_jpa.dao.DisqueraDAO;
 import com.rbsoft.project_jpa.dao.impl.DisqueraDAOImpl;
 import com.rbsoft.project_jpa.entity.Disquera;
+import com.rbsoft.project_jpa.entity.Genero;
 
 /**
  * @author RBSOFT
@@ -82,7 +84,36 @@ class DisqueraDAOImplTest {
 	void testConsultaById() {
 		Disquera objDisquera = this.disqueraDAO.consultaById(1L);
 		
+		assertNotNull(objDisquera);
+		
 		System.out.println("Descripcion desquera : " + objDisquera.getDescripcion());
 	}
+	
+	@Test
+	void testConsultaByDescripcionJPQL() {
+		
+		Disquera objDisquera = this.disqueraDAO.consultaByDescripcionJPQL("Rbsoft Company");
+		
+		assertNotNull(objDisquera);
+		
+		System.out.println("Disquera consultada por Descripcion: " + objDisquera.getDescripcion() + " " + objDisquera.getIdDisquera() );
+	}
 
+	@Test
+	void testConsultaByDescripcionNative() {
+		
+		
+		Disquera objDisquera = this.disqueraDAO.consultaByDescripcionNative("Rbsoft Company");
+		
+		assertNotNull(objDisquera);
+		
+		System.out.println("Disquera consultada por Descripcion: " + objDisquera.getDescripcion() + " " + objDisquera.getIdDisquera() );
+		
+		Genero gen = new Genero();
+		
+		
+
+	
+		
+	}
 }
