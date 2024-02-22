@@ -21,5 +21,8 @@ public interface DisqueraDAO {
 	List<Disquera> consulta();
 
 	Disquera consultaById(Long id);
+	
+	Disquera consultaByDescripcionJPQL(String descripcion);
+	Disquera consultaByDescripcionNative(String descripcion);
 
 }
