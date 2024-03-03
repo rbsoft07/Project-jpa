@@ -22,7 +22,22 @@ public interface DisqueraDAO {
 
 	Disquera consultaById(Long id);
 	
+	
+
+	/**
+	 * Metodo que permite consulta con JQL la disquera apartir de la descripcion. 
+	 * @param {@link String } descripcion
+	 * @return {@link Disquera}
+	 * 
+	 * */
 	Disquera consultaByDescripcionJPQL(String descripcion);
+	
+	/**
+	 * Metodo que permite consulta SQL Nativo la disquera apartir de la descripcion. 
+	 * @param descripcion
+	 * @return {@link Disquera}
+	 * 
+	 * */
 	Disquera consultaByDescripcionNative(String descripcion);
 
 }
