@@ -1,5 +1,6 @@
 ## Nombre del Merge Request 
    [NOMBREUSUARIO_TIPOCAMBIO_NOCASO_NOMBRERAMA.]
+   
    [Agrega un nombre corto para este Merge Request.]
 
 ## Descripción del Merge Request:
