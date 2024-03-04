@@ -7,14 +7,21 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.ManyToAny;
+
 /**
- * @author RBSOFT
- *
+ * Clase que reprensenta los subGeneros musicales registrado
+ * @author RBSOFT 
  */
 @Entity
 @Table(name = "subgenero")
@@ -28,8 +35,12 @@ public class SubGenero {
 	@Column(name = "descripcion")
 	private String descripcion; 
 	
-	@Column(name = "idGenero")
-	private Long idGenero; 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn (name = "idGenero")
+//	@Cascade(CascadeType.PERSIST)//video 
+//	@Cascade(CascadeType.MERGE)//video 100
+	@Cascade(CascadeType.REMOVE)//video 101
+	private Genero genero; 
 	
 	@Column(name = "fechaCreacion")
 	private LocalDateTime fechaCreacion; 
@@ -53,12 +64,12 @@ public class SubGenero {
 	 * @param fechaModificacion
 	 * @param estatus
 	 */
-	public SubGenero(Long idSubGenenero, String descripcion, Long idGenero, LocalDateTime fechaCreacion,
+	public SubGenero(Long idSubGenenero, String descripcion, Genero genero, LocalDateTime fechaCreacion,
 			LocalDateTime fechaModificacion, boolean estatus) {
 		super();
 		this.idSubGenenero = idSubGenenero;
 		this.descripcion = descripcion;
-		this.idGenero = idGenero;
+		this.genero = genero;
 		this.fechaCreacion = fechaCreacion;
 		this.fechaModificacion = fechaModificacion;
 		this.estatus = estatus;
@@ -92,18 +103,20 @@ public class SubGenero {
 		this.descripcion = descripcion;
 	}
 
+		
+
 	/**
-	 * @return the idGenero
+	 * @return the genero
 	 */
-	public Long getIdGenero() {
-		return idGenero;
+	public Genero getGenero() {
+		return genero;
 	}
 
 	/**
-	 * @param idGenero the idGenero to set
+	 * @param genero the genero to set
 	 */
-	public void setIdGenero(Long idGenero) {
-		this.idGenero = idGenero;
+	public void setGenero(Genero genero) {
+		this.genero = genero;
 	}
 
 	/**
