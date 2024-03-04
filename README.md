@@ -18,9 +18,13 @@ Sistema para el manejo de una tienda musical digital
 Este proyecto trata de simplificar los procesos de las tiendas mucicales y mantener la informacion mas accesible en la parte digital, 
 
 ***Caracteristicas***
+
 **Registro Generos y Sub Generos**
+
 **Registro Disqueras**
+
 **Registro Album & Artistas**
+
 **Registro Tema(caciones)**
 
 ## Instalación
