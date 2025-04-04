@@ -12,11 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * @author RBSOFT
@@ -52,7 +47,7 @@ public class Genero {
 	 * @constructor sin parametros
 	 */
 	public Genero() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	
